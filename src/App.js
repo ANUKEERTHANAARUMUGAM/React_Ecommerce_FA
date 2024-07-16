@@ -10,6 +10,7 @@ import Clothes from "./componentsa/individualComponents/Clothes/Clothes";
 import MenProducts from "./componentsa/individualComponents/MenProducts/MenProducts";
 import WomenProducts from "./componentsa/individualComponents/WomenProducts/WomenProducts";
 import Accessories from "./componentsa/individualComponents/Accessories/Accessories";
+import ShowProduct from "./componentsa/individualComponents/ShowProduct/ShowProduct";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/men" element={<MenProducts />} />
             <Route path="/clothes" element={<Clothes />} />
             <Route path="/accessories" element={<Accessories />} />
+            <Route path="/products/:id" element={<ShowProduct/>}/>
           </Routes>
         </BaseLayout>
       </BrowserRouter>{" "}
