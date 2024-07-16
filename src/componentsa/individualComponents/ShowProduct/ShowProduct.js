@@ -1,5 +1,10 @@
 import React from "react";
 import find from "lodash/find";
+
+//find method from lodash package ->takes 2 params
+//1.object
+//2.condition
+//returns first matching object
 import productDetails from "../../Data/ProductDetails";
 import { Link, useParams } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
