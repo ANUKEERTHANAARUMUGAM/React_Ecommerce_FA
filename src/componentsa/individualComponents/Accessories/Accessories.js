@@ -2,7 +2,9 @@ import React from "react";
 import productDetails from "../../Data/ProductDetails";
 import { FaShoppingCart } from "react-icons/fa";
 import "./styles.css";
-
+import { Link } from "react-router-dom";
+import AddToCart from "../../AddToCart";
+/*         <FaShoppingCart className="shopping-cart-icon" className="shopping-cart-icon" /> */
 const Accessories = () => {
   return (
     <div className="accessories">
@@ -15,21 +17,20 @@ const Accessories = () => {
           if (product.category === "accessories") {
             return (
               <div key={product.id} className="item">
-                {/*         <Link to={`/products/${product.id}`}>
-                 */}{" "}
-                <div className="product-img">
-                  <img alt={product.name} src={product.img} />
-                </div>
-                <div className="product-details">
-                  <h1 id="product-name">{product.name}</h1>
-                  <h4 id="product-description">{product.description}</h4>
-                </div>
-                {/*         </Link>
-                 */}{" "}
+                <Link to={`/products/${product.id}`}>
+                  {" "}
+                  <div className="product-img">
+                    <img alt={product.name} src={product.img} />
+                  </div>
+                  <div className="product-details">
+                    <h1 id="product-name">{product.name}</h1>
+                    <h4 id="product-description">{product.description}</h4>
+                  </div>
+                </Link>{" "}
                 <div className="price-add">
                   <h5 id="product-price">${product.price}</h5>
-                  <FaShoppingCart />
-                </div>
+                  <FaShoppingCart className="shopping-cart-icon" onClick={()=>AddToCart(product.id)}/>{" "}
+                  </div>
               </div>
             );
           }

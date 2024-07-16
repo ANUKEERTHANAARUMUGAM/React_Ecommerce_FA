@@ -1,6 +1,7 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import productDetails from "../../Data/ProductDetails";
+import AddToCart from "../../AddToCart";
 
 
 const WomenProducts = () => {
@@ -24,7 +25,7 @@ const WomenProducts = () => {
                                                 {/*         </Link>
                                                  */}        <div className="price-add">
                                                           <h5 id="product-price">${product.price}</h5>
-                                                          <FaShoppingCart/>
+                                                          <FaShoppingCart className="shopping-cart-icon" onClick={()=>{AddToCart(product.id)}}/>
                                                         </div>
                                                       </div>);
 

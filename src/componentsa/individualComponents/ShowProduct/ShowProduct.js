@@ -4,6 +4,7 @@ import productDetails from "../../Data/ProductDetails";
 import { Link, useParams } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import './index.css'
+import AddToCart from "../../AddToCart";
 
 const ShowProduct = () => {
   /*     const product = find(PRODUCTS, ['id', parseInt(this.props.match.params.id)]);
@@ -33,7 +34,7 @@ const ShowProduct = () => {
             <p id="product-description">{selectedProduct.description}</p>
             <p id="product-price">${selectedProduct.price}</p>
           </div>
-          <FaShoppingCart />
+          <FaShoppingCart className="shopping-cart-icon" onClick={()=>AddToCart(product.id)}/>{" "}
 
 </div>
           <div className="similar-products">
@@ -61,7 +62,7 @@ const ShowProduct = () => {
                       </Link>
                       <div className="price-add">
                         <h5 id="product-price">${product.price}</h5>
-                        <FaShoppingCart />{" "}
+                        <FaShoppingCart className="shopping-cart-icon" onClick={()=>AddToCart(product.id)}/>{" "}
                       </div>
                     </div>
                   </Link>

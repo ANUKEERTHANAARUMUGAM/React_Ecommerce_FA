@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
       <h4>All Items</h4>
     </div>
     <div className="items"> */
-    
+
 const AllProduct = () => {
   return (
     <div className="items-wrapper">
@@ -18,21 +18,20 @@ const AllProduct = () => {
         {productDetails.map((product) => {
           return (
             <div key={product.id} className="item">
-                     <Link to={`/products/${product.id}`}>
-               {" "}
-               {console.log(product.id)};
-              <div className="product-img">
-                <img alt={product.name} src={product.img} />
-              </div>
-              <div className="product-details">
-                <h1 id="product-name">{product.name}</h1>
-                <h4 id="product-description">{product.description}</h4>
-              </div>
-                       </Link>
-               {" "}
+              <Link to={`/products/${product.id}`}>
+                {" "}
+                {console.log(product.id)};
+                <div className="product-img">
+                  <img alt={product.name} src={product.img} />
+                </div>
+                <div className="product-details">
+                  <h1 id="product-name">{product.name}</h1>
+                  <h4 id="product-description">{product.description}</h4>
+                </div>
+              </Link>{" "}
               <div className="price-add">
                 <h5 id="product-price">${product.price}</h5>
-                <FaShoppingCart />
+                <FaShoppingCart className="shopping-cart-icon" onClick={() => AddToCart(product.id)} />{" "}
               </div>
             </div>
           );

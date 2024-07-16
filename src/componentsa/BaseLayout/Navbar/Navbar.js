@@ -14,7 +14,7 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="shopping-cart">
-      <Link to="/cart"><FaShoppingCart/></Link>
+      <Link to="/cart"><FaShoppingCart className='cart-icon'/></Link>
     </div>
   </nav>);
 
