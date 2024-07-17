@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import productDetails from "../../Data/ProductDetails";
+//import productDetails from "../../Data/ProductDetails";
 import AddToCart from "../../AddToCart";
+import axios from "axios";
 
-
+import {BASEURL,WomenProduct} from '../../URL';
 const WomenProducts = () => {
+  const [productDetails,setProductDetails]=useState([]);
+  useEffect(()=>{
+    axios.get(BASEURL+WomenProduct)
+    .then((res)=>{
+      setProductDetails(res.data);
+      console.log(res.data);
+    })
+    .catch((err)=>console.log(err));
+  },[]);
   return (
     <div className="items-wrapper">
     <div className="items-title">
@@ -16,7 +26,7 @@ const WomenProducts = () => {
                                             return(<div key={product.id} className="item">
                                                 {/*         <Link to={`/products/${product.id}`}>
                                                  */}        <div className="product-img">
-                                                          <img alt={product.name} src={product.img} />
+                                                          <img alt={product.name} src={product.image} />
                                                         </div>
                                                         <div className="product-details">
                                                           <h1 id="product-name">{product.name}</h1>

@@ -3,6 +3,8 @@ import productDetails from './Data/ProductDetails'
 
 const AddToCart = (id) => {
 
+    //npt implemented in details
+    //just functionality of how it can be implemented
     const cart=productDetails.map((product)=>{
         if (product.id==id){
             console.log(11111111111111111111);

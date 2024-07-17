@@ -1,14 +1,14 @@
 const productDetails = [
   {
-    id: 1,
-    name: "Brown Shirt",
-    description: "Brown T-Shirt for Women",
-    price: 16.99,
-    gender: "women",
-    type: "shirt",
-    img: "https://image.ibb.co/kOhL6k/img1.jpg",
-    inCart: false,
-    category: "clothes"
+    id: 1,//sp
+    name: "Brown Shirt",//dis
+    description: "Brown T-Shirt for Women",//dis
+    price: 16.99,//dis
+    gender: "women",//sp n w
+    type: "shirt",//sp
+    img: "https://image.ibb.co/kOhL6k/img1.jpg",//dis
+    inCart: false,//c
+    category: "clothes"//sp n c
   },
   {
     id: 2,

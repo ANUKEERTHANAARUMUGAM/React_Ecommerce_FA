@@ -15,6 +15,12 @@ const classNames = [
 ];//creating array of strings represting images in  header
 
 
+//layout component is an higher order component 
+//it is used for component reusablilty
+//to maintain the consistent vstructure of the page throughout the session
+
+
+
 
 export default class BaseLayout extends Component {
   constructor(props) {//constructor

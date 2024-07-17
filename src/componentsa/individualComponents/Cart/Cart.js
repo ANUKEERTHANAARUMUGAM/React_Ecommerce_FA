@@ -2,6 +2,7 @@ import React from "react";
 import productDetails from "../../Data/ProductDetails";
 import "./index.css";
 import { Link } from "react-router-dom";
+//import {BASEURL,AllProducts} from '../../URL';
 
 
 const Cart = () => {
@@ -17,7 +18,7 @@ const Cart = () => {
               <div key={product.id} className="item">
                 <Link to={`/products/${product.id}`}>
                   <div className="product-img">
-                    <img alt={product.name} src={product.img} />
+                    <img alt={product.name} src={product.image} />
                   </div>
                   <div className="product-details">
                     <h1 id="product-name">{product.name}</h1>

@@ -1,7 +1,10 @@
-import React from "react";
-import productDetails from "../../Data/ProductDetails";
-import { FaShoppingCart } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+//import productDetails from "../../Data/ProductDetails";
+ import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {BASEURL,AllProducts} from '../../URL';
+import axios from 'axios'
+
 /*     <div className="items-wrapper">
     <div className="items-title">
       <h4>All Items</h4>
@@ -9,6 +12,15 @@ import { Link } from "react-router-dom";
     <div className="items"> */
 
 const AllProduct = () => {
+  const [productDetails,setProductDetails]=useState([]);
+  useEffect(()=>{
+    axios.get(BASEURL+AllProducts)
+    .then((res)=>{
+      setProductDetails(res.data);
+      console.log(res.data);
+    })
+    .catch((err)=>console.log(err));
+  },[]);
   return (
     <div className="items-wrapper">
       <div className="items-title">
@@ -20,9 +32,9 @@ const AllProduct = () => {
             <div key={product.id} className="item">
               <Link to={`/products/${product.id}`}>
                 {" "}
-                {console.log(product.id)};
-                <div className="product-img">
-                  <img alt={product.name} src={product.img} />
+{/*                 {console.log(product.id)};
+ */}                <div className="product-img">
+                  <img alt={product.name} src={product.image} />
                 </div>
                 <div className="product-details">
                   <h1 id="product-name">{product.name}</h1>

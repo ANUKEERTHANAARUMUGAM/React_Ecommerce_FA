@@ -1,10 +1,22 @@
-import React from "react";
-import productDetails from "../../Data/ProductDetails";
+import React, { useEffect, useState } from "react";
+//import productDetails from "../../Data/ProductDetails";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import AddToCart from "../../AddToCart";
+import {BASEURL,ClothesProduct} from '../../URL';
+import axios from "axios";
 
 const Clothes = () => {
+
+  const [productDetails,setProductDetails]=useState([]);
+  useEffect(()=>{
+    axios.get(BASEURL+ClothesProduct)
+    .then((res)=>{
+      setProductDetails(res.data);
+      console.log(res.data);
+    })
+    .catch((err)=>console.log(err));
+  },[]);
   return (
     <div className="items-wrapper">
       <div className="items-title">
@@ -18,7 +30,7 @@ const Clothes = () => {
               <div key={product.id} className="item">
                 <Link to={`/products/${product.id}`}>
                   <div className="product-img">
-                    <img alt={product.name} src={product.img} />
+                    <img alt={product.name} src={product.image} />
                   </div>
                   <div className="product-details">
                     <h1 id="product-name">{product.name}</h1>
